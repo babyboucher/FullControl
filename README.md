@@ -1,6 +1,5 @@
 # FullControl
-<<<<<<< HEAD
-This plugin aims to give you full control of most aspects of game play in Exiled 2.0
+This plugin aims to give you full control of any damage in Exiled 2.0
 
 ## Damage_Values options
 Key | Description

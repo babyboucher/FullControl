@@ -1,4 +1,5 @@
 # FullControl
+<<<<<<< HEAD
 This plugin aims to give you full control of most aspects of game play in Exiled 2.0
 
 ## Damage_Values options
@@ -43,3 +44,6 @@ MP7-1 | Damage multipiler for Suppressor
 P90-1 | Damage multipiler for Suppressor
 P90-2 | Damage multipiler for Silencer
 P90-3 | Damage multipiler for Heavy Barrel
+=======
+This plugin for Exiled 2.0 aims to give you full control of most aspects of game play in SCP SL
+>>>>>>> 62995c6bae91ac13b09faa88729e03199f73ace8

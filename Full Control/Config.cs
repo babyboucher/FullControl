@@ -17,16 +17,16 @@ namespace Full_Control
         public Dictionary<string, float> DamageValues { get; set; } = new Dictionary<string, float>
         {
             {
-                "Logicer", 10
+                "Logicer", 19
             },
             {
-                "Logicer-HS", 10
+                "Logicer-HS", 79
             },
             {
-                "E11StandardRifle", 1
+                "E11StandardRifle", 18
             },
             {
-                "E11StandardRifle-HS", 10000
+                "E11StandardRifle-HS", 73
             },
         };
 

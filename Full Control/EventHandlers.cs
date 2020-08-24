@@ -13,7 +13,6 @@ namespace Full_Control.EventHandlers
         {
             float NewDamage = ev.Amount;
             string ThisDamage = ev.DamageType.name.Replace(" ", "");
-            Log.Info(ThisDamage);
             if (ev.DamageType.isWeapon == true)
             {
                 NewDamage = HeadshotFinder(ThisDamage, ev.Amount);

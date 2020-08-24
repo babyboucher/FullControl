@@ -43,3 +43,6 @@ MP7-1 | Damage multipiler for Suppressor
 P90-1 | Damage multipiler for Suppressor
 P90-2 | Damage multipiler for Silencer
 P90-3 | Damage multipiler for Heavy Barrel
+
+## Developer note
+The configs listed here for Damage_Values are only the main ones. You can put in any DamageType.name you want and it will still work, just remember to remove any spaces

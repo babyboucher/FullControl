@@ -16,25 +16,31 @@ SCP-096 | Damage from Scp-096
 SCP-173 | Damage from Scp-173
 SCP-207 | Damage multiplier for Scp-207
 SCP-939 | Damage from Scp-939
-COM15 | Damage from COM15 Pistol non headshot
-COM15-HS | Damage from COM15 Pistol headshot
-E11StandardRifle | Damage from Epsilon-11 SR non headshot
+Com15-BODY | Damage from COM15 Pistol Torso shot
+Com15-HS | Damage from COM15 Pistol headshot
+Com15-LEG | Damage from COM15 Pistol leg and arm shot
+E11StandardRifle-BODY | Damage from Epsilon-11 SR Torso shot
 E11StandardRifle-HS | Damage from Epsilon-11 SR headshot
-Logicer | Damage from Logicer non headshot
-Logicer-HS | Damage from Logicer headshot
-P90 | Damage from Project 90 non headshot
+E11StandardRifle-LEG | Damage from Epsilon-11 SR leg and arm shot
+Logicier-BODY | Damage from Logicer Torso shot
+Logicier-HS | Damage from Logicer headshot
+Logicier-LEG | Damage from Logicer leg and arm shot
+P90-BODY | Damage from Project 90 Torso shot
 P90-HS | Damage from Project 90 headshot
-USP | Damage from USP non headshot
+P90-LEG | Damage from Project 90 leg and arm shot
+USP-BODY | Damage from USP Torso shot
 USP-HS | Damage from USP headshot
-MP7 | Damage from MP7 non headshot
+USP-LEG | Damage from USP leg and arm shot
+MP7-BODY | Damage from MP7 Torso shot
 MP7-HS | Damage from MP7 headshot
+MP7-LEG | Damage from MP7 leg and arm shot
 
 ## Barrel_Values options
 Key | Description
 --- | ---
 USP-1 | Damage multiplier for Silencer
 USP-2 | Damage multiplier for Heavy Barrel
-COM15-1 | Damage multiplier for Suppressor
+Com15-1 | Damage multiplier for Suppressor
 E11StandardRifle-1 | Damage multiplier for Silencer
 E11StandardRifle-2 | Damage multiplier for Muzzle Break
 E11StandardRifle-3 | Damage multiplier for Heavy Barrel
@@ -43,6 +49,27 @@ MP7-1 | Damage multipiler for Suppressor
 P90-1 | Damage multipiler for Suppressor
 P90-2 | Damage multipiler for Silencer
 P90-3 | Damage multipiler for Heavy Barrel
+
+## Class_Exception options
+Key | Description
+--- | ---
+Scp106-TESLA | Damage modifyer from Tesla for Scp106
+Scp049-POCKET | Damage modifyer from Passive Scp-106 pocket for Scp049
+Scp0492-DECONT | Damage modifyer from Light Decontamination for Scp0492
+NtfCadet-FALL | Damage modifyer for falling down for NTF Cadet
+NtfCommander-GRENADE | Damage modifyer for Explosive Grenade for NTF Commander
+NtfLieutenant-SCP-106 | Damage modifyer from Scp-106 for NTF lieutenant
+NtfScientist-SCP-049 | Damage modifyer from Scp-049 for NTF Scientist
+Scientist-SCP-0492 |Damage modifyer from Scp-049-2 for Scientist
+ChaosInsurgency-SCP-096 | Damage modifyer from Scp-096 for Chaos Insurgency
+FacilityGuard-SCP-173 | Damage modifyer from Scp-173 for Facility Guard
+ClassD-SCP-207 | Damage modifyer for Scp-207 for D-class
+Scp079-SCP-939 | Damage modifyer from Scp-939 for Scp079
+Scp096-Com15 | Damage modifyer from COM15 Pistol for Scp096
+Scp173-Com15 | Damage modifyer from COM15 Pistol for scp173
+Scp93953-E11StandardRifle | Damage modifyer from Epsilon-11 SR for Scp93953
+Scp93989-E11StandardRifle | Damage modifyer from Epsilon-11 SR for Scp93989
+Tutorial-Logicier | Damage modifyer from Logicer for Tutorial
 
 ## Developer note
 The configs listed here for Damage_Values are only the main ones. You can put in any DamageType.name you want and it will still work, just remember to remove any spaces

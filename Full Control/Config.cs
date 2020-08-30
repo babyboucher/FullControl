@@ -17,13 +17,13 @@ namespace Full_Control
         public Dictionary<string, float> DamageValues { get; set; } = new Dictionary<string, float>
         {
             {
-                "Logicer", 19
+                "Logicier-BODY", 19
             },
             {
-                "Logicer-HS", 79
+                "Logicier-HS", 79
             },
             {
-                "E11StandardRifle", 18
+                "E11StandardRifle-BODY", 18
             },
             {
                 "E11StandardRifle-HS", 73
@@ -31,42 +31,65 @@ namespace Full_Control
         };
 
         [Description("A list of Guns with Mods and how much the damage should be multiplied by.")]
-        public Dictionary<string, double> BarrelValues { get; set; } = new Dictionary<string, double>
+        public Dictionary<string, float> BarrelValues { get; set; } = new Dictionary<string, float>
         {
             {
-                "USP-1", 0.80
+                "USP-1", 0.80f
             },
             {
-                "USP-2", 1.25
+                "USP-2", 1.25f
             },
             {
-                "COM15-1", 0.90
+                "Com15-1", 0.90f
             },
             {
-                "E11StandardRifle-1", 0.80
+                "E11StandardRifle-1", 0.80f
             },
             {
-                "E11StandardRifle-2", 0.90
+                "E11StandardRifle-2", 0.90f
             },
             {
-                "E11StandardRifle-3", 1.25
+                "E11StandardRifle-3", 1.25f
             },
             {
-                "E11StandardRifle-4", 1.1
+                "E11StandardRifle-4", 1.1f
             },
             {
-                "MP7-1", 0.90
+                "MP7-1", 0.90f
             },
             {
-                "P90-1", 0.90
+                "P90-1", 0.90f
             },
             {
-                "P90-2", 0.80
+                "P90-2", 0.80f
             },
             {
-                "P90-3", 1.25
+                "P90-3", 1.25f
             },
 
+        };
+
+        [Description("A list of classes and what percentage they should take from a DamageType")]
+        public Dictionary<string, float> ClassException { get; set; } = new Dictionary<string, float>
+        {
+            {
+                "Scp106-E11StandardRifle", 0.1f
+            },
+            {
+                "Scp106-MP7", 0.1f
+            },
+            {
+                "Scp106-P90", 0.1f
+            },
+            {
+                "Scp106-Com15", 0.1f
+            },
+            {
+                "Scp106-USP", 0.1f
+            },
+            {
+                "Scp106-Logicier", 0.1f
+            },
         };
     }
 }

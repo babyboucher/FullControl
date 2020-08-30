@@ -18,23 +18,30 @@ namespace Full_Control.EventHandlers
                 NewDamage = HeadshotFinder(ThisDamage, ev.Amount);
                 if (plugin.Config.BarrelValues.ContainsKey(ThisDamage + "-"+ ev.Attacker.CurrentItem.modBarrel))
                 {
-                    NewDamage *= (float)plugin.Config.BarrelValues[ThisDamage + "-" + ev.Attacker.CurrentItem.modBarrel];
+                    NewDamage *= plugin.Config.BarrelValues[ThisDamage + "-" + ev.Attacker.CurrentItem.modBarrel];
                 }
             }
             else
             {
                 if (ThisDamage == "FALL" || ThisDamage == "GRENADE" || ThisDamage == "SCP-207")
                 {
-                    NewDamage *= plugin.Config.DamageValues[ThisDamage];
+                    if (plugin.Config.DamageValues.ContainsKey(ThisDamage))
+                    {
+                        NewDamage *= plugin.Config.DamageValues[ThisDamage];
+                    }
                 }
-                else if (plugin.Config.DamageValues.ContainsKey(ThisDamage))
+                else
                 {
-                    NewDamage = plugin.Config.DamageValues[ThisDamage];
+                    NewDamage = DamageGetter(ThisDamage, "", NewDamage);
                 }
             }
             if (ev.Target.IsGodModeEnabled)
             {
                 ev.Amount = 0;
+            }
+            if (plugin.Config.ClassException.ContainsKey(ev.Target.Role.ToString()+"-"+ThisDamage))
+            {
+                NewDamage *=  plugin.Config.ClassException[(ev.Target.Role.ToString()+ "-" + ThisDamage)]; 
             }
             ev.Amount = NewDamage;
         }
@@ -43,17 +50,51 @@ namespace Full_Control.EventHandlers
         {
             if (damage > 35)
             {
-                if (plugin.Config.DamageValues.ContainsKey(gunName + "-HS"))
-                {
-                    damage = plugin.Config.DamageValues[gunName +"-HS"];
-                }
+                damage = DamageGetter(gunName, "-HS", damage);
             }
             else
             {
-                if (plugin.Config.DamageValues.ContainsKey(gunName))
+                if (gunName == "USP" || gunName == "Com15")
                 {
-                    damage = plugin.Config.DamageValues[gunName];
+                    if (damage < 17)
+                    {
+                            damage = DamageGetter(gunName, "-LEG", damage);
+                    }
+                    else
+                    {
+                        damage = DamageGetter(gunName, "-BODY", damage);
+                    }
                 }
+                if (gunName == "P90" || gunName == "Logicier" || gunName == "MP7")
+                {
+                    if (damage < 10)
+                    {
+                        damage = DamageGetter(gunName, "-LEG", damage);
+                    }
+                    else
+                    {
+                        damage = DamageGetter(gunName, "-BODY", damage);
+                    }
+                }
+                if (gunName == "E11StandardRifle")
+                {
+                    if (damage < 13)
+                    {
+                        damage = DamageGetter(gunName, "-LEG", damage);
+                    }
+                    else
+                    {
+                        damage = DamageGetter(gunName, "-BODY", damage);
+                    }
+                }
+            }
+            return damage;
+        }
+        public float DamageGetter(string gunName, string Extention, float damage)
+        {
+            if (plugin.Config.DamageValues.ContainsKey(gunName + Extention))
+            {
+                damage = plugin.Config.DamageValues[gunName + Extention];
             }
             return damage;
         }

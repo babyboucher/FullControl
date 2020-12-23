@@ -1,20 +1,20 @@
 # FullControl
 This plugin aims to give you full control of any damage in Exiled 2.0
 
-## Damage_Values options
+## Total_Damage_Values and Percentage_Damage_Values options
 Key | Description
 --- | ---
 TESLA | Damage from Tesla
 POCKET | Damage from Passive Scp-106 pocket
 DECONT | Damage from Light Decontamination
-FALL | Damage multiplier for falling down
-GRENADE | Damage multiplier for Explosive Grenade
+FALL | Damage from falling down
+GRENADE | Damage from Frag Grenage
 SCP-106 | Damage from Scp-106
 SCP-049 | Damage from Scp-049
 SCP-0492 |Damage from Scp-049-2
 SCP-096 | Damage from Scp-096
 SCP-173 | Damage from Scp-173
-SCP-207 | Damage multiplier for Scp-207
+SCP-207 | Damage from Scp-207
 SCP-939 | Damage from Scp-939
 Com15-BODY | Damage from COM15 Pistol Torso shot
 Com15-HEAD | Damage from COM15 Pistol headshot

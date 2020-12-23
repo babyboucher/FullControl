@@ -15,16 +15,10 @@ namespace Full_Control.EventHandlers
             string ThisDamage = ev.DamageType.name.Trim();
             if (!ev.DamageType.isWeapon)
             {
-                if (ThisDamage == "FALL" || ThisDamage == "GRENADE" || ThisDamage == "SCP-207")
+                NewDamage = TotalDamageGetter(ThisDamage, "", NewDamage);
+                if (plugin.Config.PercentageDamageValues.ContainsKey(ThisDamage))
                 {
-                    if (plugin.Config.DamageValues.ContainsKey(ThisDamage))
-                    {
-                        NewDamage *= plugin.Config.DamageValues[ThisDamage];
-                    }
-                }
-                else
-                {
-                    NewDamage = DamageGetter(ThisDamage, "", NewDamage);
+                    NewDamage *= plugin.Config.PercentageDamageValues[ThisDamage];
                 }
             }
             if (ev.Target.IsGodModeEnabled)
@@ -37,11 +31,11 @@ namespace Full_Control.EventHandlers
             }
             ev.Amount = NewDamage;
         }
-        public float DamageGetter(string gunName, string Extention, float damage)
+        public float TotalDamageGetter(string gunName, string Extention, float damage)
         {
-            if (plugin.Config.DamageValues.ContainsKey(gunName + Extention))
+            if (plugin.Config.TotalDamageValues.ContainsKey(gunName + Extention))
             {
-                damage = plugin.Config.DamageValues[gunName + Extention];
+                damage = plugin.Config.TotalDamageValues[gunName + Extention];
             }
             return damage;
         }
@@ -49,12 +43,15 @@ namespace Full_Control.EventHandlers
         public void OnPlayerShot(ShotEventArgs ev)
         {
             string Gun = ev.Shooter.CurrentItem.id.ToString().Replace("Gun", "");
-            float NewDamage = DamageGetter(Gun, "-"+ev.HitboxTypeEnum.ToString(), ev.Damage);
+            ev.Damage = TotalDamageGetter(Gun, "-"+ev.HitboxTypeEnum.ToString(), ev.Damage);
             if (plugin.Config.BarrelValues.ContainsKey(Gun + "-" + ev.Shooter.CurrentItem.modBarrel))
             {
-                NewDamage *= plugin.Config.BarrelValues[Gun + "-" + ev.Shooter.CurrentItem.modBarrel];
+                ev.Damage *= plugin.Config.BarrelValues[Gun + "-" + ev.Shooter.CurrentItem.modBarrel];
             }
-            ev.Damage = NewDamage;
+            if (plugin.Config.PercentageDamageValues.ContainsKey(Gun+ "-" + ev.HitboxTypeEnum.ToString()))
+            {
+                ev.Damage *= plugin.Config.PercentageDamageValues[Gun + "-" + ev.HitboxTypeEnum.ToString()];
+            }
         }
     }
 }

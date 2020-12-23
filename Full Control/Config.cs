@@ -14,7 +14,7 @@ namespace Full_Control
         public bool IsEnabled { get; set; } = true;
 
         [Description("A list of DamageTypes and how much damage they should do before any barrel mods.")]
-        public Dictionary<string, float> DamageValues { get; set; } = new Dictionary<string, float>
+        public Dictionary<string, float> TotalDamageValues { get; set; } = new Dictionary<string, float>
         {
             {
                 "Logicer-BODY", 19
@@ -27,6 +27,23 @@ namespace Full_Control
             },
             {
                 "E11StandardRifle-HS", 73
+            },
+        };
+
+        [Description("A list of DamageTypes and how much percentage damage they should do.(Applied after Total Damage)")]
+        public Dictionary<string, float> PercentageDamageValues { get; set; } = new Dictionary<string, float>
+        {
+            {
+                "Logicer-BODY", .9f
+            },
+            {
+                "Logicer-HS", 1
+            },
+            {
+                "E11StandardRifle-BODY", .9f
+            },
+            {
+                "E11StandardRifle-HS", 1
             },
         };
 

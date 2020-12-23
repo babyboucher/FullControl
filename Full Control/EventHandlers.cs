@@ -53,7 +53,7 @@ namespace Full_Control.EventHandlers
             float NewDamage = DamageGetter(Gun, "-"+ev.HitboxTypeEnum.ToString(), ev.Damage);
             if (plugin.Config.BarrelValues.ContainsKey(Gun + "-" + ev.Shooter.CurrentItem.modBarrel))
             {
-                NewDamage *= plugin.Config.BarrelValues[ev.Shooter.CurrentItem.ToString() + "-" + ev.Shooter.CurrentItem.modBarrel];
+                NewDamage *= plugin.Config.BarrelValues[Gun + "-" + ev.Shooter.CurrentItem.modBarrel];
             }
             ev.Damage = NewDamage;
         }

@@ -9,7 +9,7 @@ namespace Full_Control
     {
         public override string Name { get; } = "Full Control";
         public override string Author { get; } = "Babyboucher20";
-        public override Version Version { get; } = new Version(2, 5, 0);
+        public override Version Version { get; } = new Version(2, 5, 1);
         public override Version RequiredExiledVersion { get; } = new Version(2, 0, 9);
         public override string Prefix { get; } = "FullControl";
         

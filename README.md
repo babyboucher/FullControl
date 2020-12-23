@@ -17,23 +17,29 @@ SCP-173 | Damage from Scp-173
 SCP-207 | Damage multiplier for Scp-207
 SCP-939 | Damage from Scp-939
 Com15-BODY | Damage from COM15 Pistol Torso shot
-Com15-HS | Damage from COM15 Pistol headshot
-Com15-LEG | Damage from COM15 Pistol leg and arm shot
+Com15-HEAD | Damage from COM15 Pistol headshot
+Com15-LEG | Damage from COM15 Pistol leg shot
+Com15-ARM | Damage from COM15 Pistol arm shot
 E11StandardRifle-BODY | Damage from Epsilon-11 SR Torso shot
-E11StandardRifle-HS | Damage from Epsilon-11 SR headshot
-E11StandardRifle-LEG | Damage from Epsilon-11 SR leg and arm shot
-Logicier-BODY | Damage from Logicer Torso shot
-Logicier-HS | Damage from Logicer headshot
-Logicier-LEG | Damage from Logicer leg and arm shot
+E11StandardRifle-HEAD | Damage from Epsilon-11 SR headshot
+E11StandardRifle-LEG | Damage from Epsilon-11 SR leg shot
+E11StandardRifle-ARM | Damage from Epsilon-11 SR arm shot
+Logicer-BODY | Damage from Logicer Torso shot
+Logicer-HEAD | Damage from Logicer headshot
+Logicer-LEG | Damage from Logicer leg shot
+Logicer-ARM | Damage from Logicer arm shot
 P90-BODY | Damage from Project 90 Torso shot
-P90-HS | Damage from Project 90 headshot
-P90-LEG | Damage from Project 90 leg and arm shot
+P90-HEAD | Damage from Project 90 headshot
+P90-LEG | Damage from Project 90 leg shot
+P90-ARM | Damage from Project 90 arm shot
 USP-BODY | Damage from USP Torso shot
-USP-HS | Damage from USP headshot
-USP-LEG | Damage from USP leg and arm shot
+USP-HEAD | Damage from USP headshot
+USP-LEG | Damage from USP leg shot
+USP-ARM | Damage from USP arm shot
 MP7-BODY | Damage from MP7 Torso shot
-MP7-HS | Damage from MP7 headshot
-MP7-LEG | Damage from MP7 leg and arm shot
+MP7-HEAD | Damage from MP7 headshot
+MP7-LEG | Damage from MP7 leg shot
+MP7-ARM | Damage from MP7 arm shot
 
 ## Barrel_Values options
 Key | Description

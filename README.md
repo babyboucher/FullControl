@@ -57,6 +57,7 @@ P90-2 | Damage multipiler for Silencer
 P90-3 | Damage multipiler for Heavy Barrel
 
 ## Class_Exception options
+This is only a example of all the options for classes, you can do any class with any Damagetype. All gun damage is included in just one value.
 Key | Description
 --- | ---
 Scp106-TESLA | Damage modifyer from Tesla for Scp106

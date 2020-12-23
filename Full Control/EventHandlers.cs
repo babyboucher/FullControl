@@ -12,8 +12,8 @@ namespace Full_Control.EventHandlers
         public void OnPlayerHurt(HurtingEventArgs ev)
         {
             float NewDamage = ev.Amount;
-            string ThisDamage = ev.DamageType.name.Replace(" ", "");
-            if (ev.DamageType.isWeapon != true)
+            string ThisDamage = ev.DamageType.name.Trim();
+            if (!ev.DamageType.isWeapon)
             {
                 if (ThisDamage == "FALL" || ThisDamage == "GRENADE" || ThisDamage == "SCP-207")
                 {
@@ -29,14 +29,13 @@ namespace Full_Control.EventHandlers
             }
             if (ev.Target.IsGodModeEnabled)
             {
-                ev.Amount = 0;
+                ev.IsAllowed = false;
             }
             if (plugin.Config.ClassException.ContainsKey(ev.Target.Role.ToString()+"-"+ThisDamage))
             {
                 NewDamage *=  plugin.Config.ClassException[(ev.Target.Role.ToString()+ "-" + ThisDamage)]; 
             }
             ev.Amount = NewDamage;
-            Log.Error(ev.Amount);
         }
         public float DamageGetter(string gunName, string Extention, float damage)
         {

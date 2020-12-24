@@ -20,7 +20,7 @@ namespace Full_Control
                 "Logicer-BODY", 19
             },
             {
-                "Logicer-HS", 79
+                "Logicer-HEAD", 79
             },
             {
                 "E11StandardRifle-BODY", 18
@@ -37,13 +37,13 @@ namespace Full_Control
                 "Logicer-BODY", .9f
             },
             {
-                "Logicer-HS", 1
+                "Logicer-HEAD", 1
             },
             {
                 "E11StandardRifle-BODY", .9f
             },
             {
-                "E11StandardRifle-HS", 1
+                "E11StandardRifle-HEAD", 1
             },
         };
 

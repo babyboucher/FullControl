@@ -30,7 +30,7 @@ namespace Full_Control
         public override void OnDisabled()
         {
             Player.Hurting -= PlayerHandlers.OnPlayerHurt;
-            Player.Shot += PlayerHandlers.OnPlayerShot;
+            Player.Shot -= PlayerHandlers.OnPlayerShot;
 
             base.OnDisabled();
         }

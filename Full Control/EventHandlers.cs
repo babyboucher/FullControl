@@ -1,5 +1,6 @@
 namespace Full_Control.EventHandlers
 {
+    using Exiled.API.Extensions;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
 
@@ -12,8 +13,8 @@ namespace Full_Control.EventHandlers
         public void OnPlayerHurt(HurtingEventArgs ev)
         {
             float NewDamage = ev.Amount;
-            string ThisDamage = ev.DamageType.name.Trim();
-            if (!ev.DamageType.isWeapon)
+            string ThisDamage = ev.DamageType.Name.Trim();
+            if (!ev.DamageType.Weapon.IsWeapon())
             {
                 NewDamage = TotalDamageGetter(ThisDamage, "", NewDamage);
                 if (plugin.Config.PercentageDamageValues.ContainsKey(ThisDamage))
@@ -42,15 +43,15 @@ namespace Full_Control.EventHandlers
 
         public void OnPlayerShot(ShotEventArgs ev)
         {
-            string Gun = ev.Shooter.CurrentItem.id.ToString().Replace("Gun", "");
-            ev.Damage = TotalDamageGetter(Gun, "-"+ev.HitboxTypeEnum.ToString(), ev.Damage);
+            string Gun = ev.Shooter.CurrentItem.Type.ToString().Replace("Gun", "");
+            ev.Damage = TotalDamageGetter(Gun, "-"+ ev.Hitbox._dmgMultiplier, ev.Damage);
             if (plugin.Config.BarrelValues.ContainsKey(Gun + "-" + ev.Shooter.CurrentItem.modBarrel))
             {
                 ev.Damage *= plugin.Config.BarrelValues[Gun + "-" + ev.Shooter.CurrentItem.modBarrel];
             }
-            if (plugin.Config.PercentageDamageValues.ContainsKey(Gun+ "-" + ev.HitboxTypeEnum.ToString()))
+            if (plugin.Config.PercentageDamageValues.ContainsKey(Gun+ "-" + ev.Hitbox._dmgMultiplier))
             {
-                ev.Damage *= plugin.Config.PercentageDamageValues[Gun + "-" + ev.HitboxTypeEnum.ToString()];
+                ev.Damage *= plugin.Config.PercentageDamageValues[Gun + "-" + ev.Hitbox._dmgMultiplier];
             }
         }
     }
